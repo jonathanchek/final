@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
-    public float speed;//the speed pacman can travel
-    public int score = 0;//the score
-    public int livesLeft = 2;//how many extras lives pacman has left
+    public float speed;
+    public int score = 0;
+    public int livesLeft = 2;
 
-    public Text scoreText;//the Text UI Component that shows the score
+    public Text scoreText;
     public Image life1;
     public Image life2;
 
-    private Vector2 direction;//the direction pacman is going
+    private Vector2 direction;
     private bool alive = true;
 
     Rigidbody2D rb2d;
