@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour {
 
-    public int points = 100;//how many points to give the player upon collection
+    public int points = 100;
     public AudioClip collectSound;
 
 	// Use this for initialization

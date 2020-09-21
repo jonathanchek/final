@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class GhostController : MonoBehaviour {
 
-    public float speed = 1.0f;//the speed this ghost can travel
-    public Vector2 direction = Vector2.up;//the direction this ghost is going
+    public float speed = 1.0f;
+    public Vector2 direction = Vector2.up;
     public Color vulnerableColor = Color.blue;
-    public int points = 400;//how many points you get for eating this ghost
+    public int points = 400;
 
-    private float changeDirectionTime;//the soonest that he can change direction
+    private float changeDirectionTime;
     private Vector2 originalPosition;
     private Color originalColor;
     private bool frozen = false;
@@ -37,7 +37,7 @@ public class GhostController : MonoBehaviour {
         {
             if (!eaten)
             {
-                //Wall Bump Detection
+                
                 if (!openDirection(direction))
                 {
                     if (canChangeDirection())
@@ -49,12 +49,12 @@ public class GhostController : MonoBehaviour {
                         changeDirectionAtRandom();
                     }
                 }
-                //Come Across an Intersection
+                
                 else if (canChangeDirection() && Time.time > changeDirectionTime)
                 {
                     changeDirectionAtRandom();
                 }
-                //Stuck on a non-wall
+               
                 else if (rb2d.velocity.magnitude < speed)
                 {
                     changeDirectionAtRandom();
@@ -62,14 +62,14 @@ public class GhostController : MonoBehaviour {
             }
             else
             {
-                //Check to see if it's arrived
+              
                 if (Vector2.Distance(originalPosition, transform.position) < 0.1f)
                 {
                     transform.position = originalPosition;
                     setEaten(false);
                 }
             }
-            //Rotate Eyes
+          
             foreach (Transform t in GetComponentsInChildren<Transform>())
             {
                 if (t != transform)
@@ -77,7 +77,7 @@ public class GhostController : MonoBehaviour {
                     t.up = direction;
                 }
             }
-            //Move
+           
             rb2d.velocity = direction * speed;
             if (rb2d.velocity.x == 0)
             {

@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
     };
     public GameState gameState = GameState.PLAY;
     [Range(1,10)]
-    public float ghostVulnerableDuration = 7.0f;//how long the ghosts should be vulnerable for
+    public float ghostVulnerableDuration = 7.0f;
     [Range(1,5)]
     public float ghostVulnerableEndWarningDuration = 2.0f;
     
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour {
 
     private static GameManager instance;
     private float respawnTime;
-    private float invulnerableTime = 0;//when the ghosts will become invulnerable again
+    private float invulnerableTime = 0;
 
 	// Use this for initialization
 	void Start () {
